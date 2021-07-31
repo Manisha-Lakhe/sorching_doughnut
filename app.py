@@ -12,22 +12,26 @@ def bubble(li):
         for i in range(len(li) - 1):
             if li[i] > li[i + 1]:
                 li[i], li[i + 1] = li[i + 1], li[i]
-    return(li)
+    print(li)
+                
+    return li 
 
 def selection(li):
    
     for i in range(len(li)):
         for j in range(i + 1, len(li)):
             if li[i] > li[j]:
+                li[j] = li[i]
                 li[i], li[j] = li[j], li[i]
-    return(li)
+
+    return li
 
 def insertion(li):
     for i in range(len(li)):
         for j in range(i + 1, len(li)):
             while li[i] > li[j]:
                 li[i], li[j] = li[j], li[i]
-    return(li)
+    return li
 
 def shell(arr):
     n = len(arr)
@@ -41,20 +45,21 @@ def shell(arr):
                 j = j - gap
             arr[j] = temp
         gap = gap // 2
-    return(arr)
+    return arr
 
 @app.route('/',methods=['POST'])
 def task():
 	if request.method == 'POST':
-            li = list(map(int,input(request.form['text'])))
+            li = str(request.form['input'])
+            li = list(li.split(" "))
             req = request.form['task']
             operations = {
-                1: bubble,
-                2: selection,
-                3: insertion,
-                4: shell
+                '1': bubble(li),
+                '2': selection(li),
+                '3': insertion(li),
+                '4': shell(li)
             }
-            output = operations.get(req)(li)
-            return render_template('output.html', li = output)
+            result = operations.get(req)
+            return render_template('output.html', result = result)
 if __name__ == '__main__':
     app.run()
