@@ -8,7 +8,7 @@
             <header>
                 <h1> Sorching Doughnut</h1>
             </header> 
-            <form action="{{ url_for('task')}}" method="POST">
+            <form>
                 <input type="text" placeholder="Enter space seperated data here : " class="todo-input">
                 <select name="task" id="task">
                     <option value="select_task" selected>select-task</option>
@@ -18,12 +18,10 @@
                     <option value="4">Shell Sort</option>
                 </select>
                 <button class="todo-button" type="submit">Sort</button>
-                
-                
-            
+       
         </form>
         <div class="output">
-            <textarea name="text" rows="5" cols="120">{{ li }}</textarea>
+            <p>{{ result }}</p>
         </div>
 
     </body>
