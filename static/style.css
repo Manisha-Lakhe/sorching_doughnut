@@ -22,6 +22,7 @@ header{
     text-shadow: 0px 0px 9px #000000;
 }
 
+
 header, form{
     min-height: 20vh;
     display: flex;
@@ -79,9 +80,11 @@ form input{
     width: 30%;
     position: absolute;
     top: 40%;
-    left: 20%;
+    left: 35%;
     min-width: 15rem;
-    border: none;
+    border: whitesmoke;
+    border-style: solid;
+    border-width: 2;
     font-family: 'Source Sans Pro',sans-serif;
     font-weight: 600;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -189,3 +192,7 @@ select{
 
 }
 
+p{
+    text-align: center;
+    color: rgb(183, 198, 211);
+}
