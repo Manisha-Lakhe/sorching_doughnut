@@ -8,14 +8,14 @@
             <header>
                 <h1> Sorching Doughnut</h1>
             </header> 
-            <form action="{{ url_for('task')}}" method="POST">
-                <input name = "text" type="text" placeholder="Enter space seperated data here : " class="todo-input">
+            <form action="{{ url_for('task')}}"method="POST">
+                <input name = "input" type="text" placeholder="Enter space seperated data here : " class="todo-input">
                 <select name="task" id="task">
                     <option value="select_task" selected>select-task</option>
-                    <option value="bubble">Bubble Sort</option>
-                    <option value="selection">Selection Sort</option>
-                    <option value="insertion">Insertion Sort</option>
-
+                    <option value="1">Bubble Sort</option>
+                    <option value="2">Selection Sort</option>
+                    <option value="3">Insertion Sort</option>
+                    <option value="4">Shell Sort</option>
                 </select>
                 <button class="todo-button" type="submit">Sort</button>
 
